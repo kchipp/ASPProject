@@ -1,0 +1,72 @@
+﻿@model ASPProject.Models.Service
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Service</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetUsers.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUsers.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastPickup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastPickup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NextPickup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NextPickup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PickupDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PickupDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Balance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillingFrequency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillingFrequency)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

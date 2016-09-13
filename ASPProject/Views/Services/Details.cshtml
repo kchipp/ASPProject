@@ -1,0 +1,66 @@
+﻿@model ASPProject.Models.Service
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Service</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetUsers.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUsers.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastPickup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastPickup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NextPickup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NextPickup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PickupDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PickupDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Balance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillingFrequency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillingFrequency)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ServiceId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

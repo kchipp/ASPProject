@@ -35,5 +35,21 @@ namespace ASPProject.Models
         {
             return new ApplicationDbContext();
         }
+
+       
+
+        public DbSet<Address> Address { get; set; }
+
+        public DbSet<Service> Service { get; set; }
+
+        public DbSet<UserAddressJunction> UserAddressJunction { get; set; }
+
+        public DbSet<UserRouteJunction> UserRouteJunction { get; set; }
+
+        public DbSet<Route> Route { get; set; }
+
+        public DbSet<AspNetUserPaymentJunction> AspUserPaymentJunction { get; set; }
+
+        public DbSet<Payment> Payment { get; set; }
     }
 }

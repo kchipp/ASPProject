@@ -1,0 +1,42 @@
+﻿@model ASPProject.Models.Route
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Route</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Addresses.Address1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Addresses.Address1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetUsers.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUsers.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Services.PickupDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Services.PickupDay)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RouteId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

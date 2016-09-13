@@ -33,12 +33,16 @@
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
         </div>
-    </div>    <div class="form-group">
-        @Html.LabelFor(m => m.Customer, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.CheckBoxFor(m => m.Customer, new { @class = "form-control" })
-        </div>
     </div>
+     <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @Html.RadioButtonFor(e => e.Customer, true, new { id = "customer-true" })
+            @Html.Label("customer-true", "Customer")
+
+            @Html.RadioButtonFor(e => e.Customer, false, new { id = "customer-false" })
+            @Html.Label("customer-false", "Employee")
+            </div>
+         </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">

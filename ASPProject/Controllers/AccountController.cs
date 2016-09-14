@@ -164,9 +164,9 @@ namespace ASPProject.Controllers
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
                     if (user.Customer == false)
                     {
-                        return RedirectToAction("Index", "Route");
+                        return RedirectToAction("Index", "Routes");
                     }
-                    return RedirectToAction("Index", "Service");
+                    return RedirectToAction("Index", "Services");
                 }
                 AddErrors(result);
             }

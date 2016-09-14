@@ -14,6 +14,7 @@ namespace ASPProject.Models
 
         public DateTime LastPickup { get; set; }
 
+
         public DateTime NextPickup { get; set; }
 
         [Required]

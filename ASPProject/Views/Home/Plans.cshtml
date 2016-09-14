@@ -8,15 +8,6 @@
 
 <body>
 
-    <p>
-
-        
-    </p>
-    <button type="button">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</button>
-    <button type="button">@Html.ActionLink("Subscribe Now", "Create", "Services", routeValues: null, htmlAttributes: new { id = "subscribeLink" })</button>
-
-
-
     <div class="row">
         <div class="col-sm-6">
             <br>
@@ -31,13 +22,13 @@
 
     <div class="row">
         <div class="col-sm-6">
-            <p>Click here if you want to registrer..</p>
-            <button type="button">Register...</button>
+            <p>First, please register as a customer...</p>
+            <button type="button">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</button>
         </div>
         <div class="row">
             <div class="col-sm-6">
-                <p>Click here if you are a returning customer</p>
-                <button type="button">Returning Customer...</button>
+                <p>Click here to get started!</p>
+                <button type="button">@Html.ActionLink("Subscribe Now", "Create", "Addresses", routeValues: null, htmlAttributes: new { id = "subscribeLink" })</button>
             </div>
         </div>
 </body>

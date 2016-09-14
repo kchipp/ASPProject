@@ -260,6 +260,10 @@
     <Compile Include="Migrations\201609142208035_fixed address foreign key.Designer.cs">
       <DependentUpon>201609142208035_fixed address foreign key.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609142228356_updated service create cshtml.cs" />
+    <Compile Include="Migrations\201609142228356_updated service create cshtml.Designer.cs">
+      <DependentUpon>201609142228356_updated service create cshtml.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -419,6 +423,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609142208035_fixed address foreign key.resx">
       <DependentUpon>201609142208035_fixed address foreign key.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609142228356_updated service create cshtml.resx">
+      <DependentUpon>201609142228356_updated service create cshtml.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

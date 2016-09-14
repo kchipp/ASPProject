@@ -240,6 +240,10 @@
     <Compile Include="Migrations\201609132122081_added  controllers.Designer.cs">
       <DependentUpon>201609132122081_added  controllers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609141701107_added logic to registration controller.cs" />
+    <Compile Include="Migrations\201609141701107_added logic to registration controller.Designer.cs">
+      <DependentUpon>201609141701107_added logic to registration controller.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -382,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609132122081_added  controllers.resx">
       <DependentUpon>201609132122081_added  controllers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609141701107_added logic to registration controller.resx">
+      <DependentUpon>201609141701107_added logic to registration controller.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

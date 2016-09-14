@@ -22,9 +22,7 @@ namespace ASPProject.Models
 
         public decimal Balance { get; set; }
 
-        public bool BillingFrequency { get; set; }
-
-
+        
         [ForeignKey("AspNetUsers")]
         public string UserId { get; set; }
         public ApplicationUser AspNetUsers { get; set; }

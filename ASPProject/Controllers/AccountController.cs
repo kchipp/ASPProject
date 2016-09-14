@@ -166,7 +166,7 @@ namespace ASPProject.Controllers
                     {
                         return RedirectToAction("Index", "Routes");
                     }
-                    return RedirectToAction("Index", "Services");
+                    return RedirectToAction("Plans", "Home");
                 }
                 AddErrors(result);
             }

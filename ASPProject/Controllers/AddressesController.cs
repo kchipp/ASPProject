@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ASPProject.Models;
+using Microsoft.AspNet.Identity;
 
 namespace ASPProject.Controllers
 {
@@ -50,6 +51,8 @@ namespace ASPProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "AddressId,Type,Address1,Address2,City,State,ZipCode,UserId")] Address address)
         {
+            address.AspNetUsers = db.Users.Find(User.Identity.GetUserId());
+            address.UserId = User.Identity.GetUserId();
             if (ModelState.IsValid)
             {
                 db.Address.Add(address);

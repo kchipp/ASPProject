@@ -4964,7 +4964,7 @@ a.badge:focus {
   padding-bottom: 30px;
   margin-bottom: 30px;
   /*color: inherit;*/
-  background: #FFFFFF url("trashcans.jpg") center center;
+  background-image: url("trashcans.jpg");
 }
 .jumbotron h1,
 .jumbotron .h1 {

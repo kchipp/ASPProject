@@ -26,5 +26,11 @@ namespace ASPProject.Controllers
 
             return View();
         }
+
+        public ActionResult Plans()
+        {
+            ViewBag.Message = "Your plans page.";
+            return View();
+        }
     }
 }

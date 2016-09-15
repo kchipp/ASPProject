@@ -57,6 +57,7 @@ namespace ASPProject.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
@@ -66,7 +67,7 @@ namespace ASPProject.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl, ApplicationUser user)
         {
             if (!ModelState.IsValid)
             {
@@ -79,7 +80,15 @@ namespace ASPProject.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    var x = model.Email;
+                    
+                    if (user.Customer == false)
+                    {
+                        return RedirectToAction("Index", "Routes");
+                    }
+                    return RedirectToAction("Plans", "Home");
+
+
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -88,6 +97,8 @@ namespace ASPProject.Controllers
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
                     return View(model);
+
+
             }
         }
 

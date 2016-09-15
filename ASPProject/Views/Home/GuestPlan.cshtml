@@ -1,13 +1,13 @@
 ﻿
 @{
-    ViewBag.Title = "Plans";
+    ViewBag.Title = "GuestPlan";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Plans</h2>
 
 <body>
-    <p>Thank you for registering. Take a look at our services and click "Subscribe Now" when you are ready to take the plunge.</p>
+    <p>Take a look at our services. Register for more information..</p>
     <div class="row">
         <div class="col-sm-6">
             <br>
@@ -17,21 +17,21 @@
         <div class="col-sm-6">
             <br>
             <h2>Pricing Plans</h2>
-            <p> Please chose a pricing plan. We only have ONE!! haha!!</p>
+            <p> Please register to view pricing plans.</p>
         </div>
     </div>
 
 
-    @*<div class="row">
+    <div class="row">
         <div class="col-sm-6">
             <p>First, please register as a customer...</p>
             <button type="button">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</button>
         </div>
-  </div>*@
-        <div class="row">
+    </div>
+    @*<div class="row">
             <div class="col-sm-6">
                 <p>Click here to get started!</p>
                 <button type="button">@Html.ActionLink("Subscribe Now", "Create", "Addresses", routeValues: null, htmlAttributes: new { id = "subscribeLink" })</button>
             </div>
-        </div>
+        </div>*@
 </body>

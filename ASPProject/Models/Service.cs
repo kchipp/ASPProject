@@ -14,10 +14,8 @@ namespace ASPProject.Models
 
         public DateTime LastPickup { get; set; }
 
-
         public DateTime NextPickup { get; set; }
 
-        [Required]
         public string PickupDay { get; set; }
 
         public decimal Balance { get; set; }

@@ -264,6 +264,18 @@
     <Compile Include="Migrations\201609142228356_updated service create cshtml.Designer.cs">
       <DependentUpon>201609142228356_updated service create cshtml.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609151503536_edited services model.cs" />
+    <Compile Include="Migrations\201609151503536_edited services model.Designer.cs">
+      <DependentUpon>201609151503536_edited services model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609151535316_added view for unregistered guests.cs" />
+    <Compile Include="Migrations\201609151535316_added view for unregistered guests.Designer.cs">
+      <DependentUpon>201609151535316_added view for unregistered guests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609151541390_add guest view.cs" />
+    <Compile Include="Migrations\201609151541390_add guest view.Designer.cs">
+      <DependentUpon>201609151541390_add guest view.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -375,6 +387,7 @@
     <Content Include="Views\UserRouteJunctions\Edit.cshtml" />
     <Content Include="Views\UserRouteJunctions\Index.cshtml" />
     <Content Include="Views\Home\Plans.cshtml" />
+    <Content Include="Views\Home\GuestPlan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -426,6 +439,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609142228356_updated service create cshtml.resx">
       <DependentUpon>201609142228356_updated service create cshtml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609151503536_edited services model.resx">
+      <DependentUpon>201609151503536_edited services model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609151535316_added view for unregistered guests.resx">
+      <DependentUpon>201609151535316_added view for unregistered guests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609151541390_add guest view.resx">
+      <DependentUpon>201609151541390_add guest view.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

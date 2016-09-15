@@ -32,5 +32,11 @@ namespace ASPProject.Controllers
             ViewBag.Message = "Your plans page.";
             return View();
         }
+
+        public ActionResult GuestPlan()
+        {
+            ViewBag.Message = "Your guest plans page.";
+            return View();
+        }
     }
 }

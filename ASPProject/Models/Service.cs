@@ -12,11 +12,8 @@ namespace ASPProject.Models
         [Key]
         public int ServiceId { get; set; }
 
-        public DateTime LastPickup { get; set; }
-
+        [DataType(DataType.Date)]
         public DateTime NextPickup { get; set; }
-
-        public string PickupDay { get; set; }
 
         public decimal Balance { get; set; }
 

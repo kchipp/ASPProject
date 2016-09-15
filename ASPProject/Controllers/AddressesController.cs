@@ -57,7 +57,8 @@ namespace ASPProject.Controllers
             {
                 db.Address.Add(address);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return RedirectToAction("Create", "Services");
             }
 
             ViewBag.UserId = new SelectList(db.Users, "Id", "FirstName", address.UserId);

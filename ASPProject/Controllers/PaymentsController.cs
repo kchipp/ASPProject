@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ASPProject.Models;
+using Microsoft.AspNet.Identity;
 
 namespace ASPProject.Controllers
 {
@@ -52,7 +53,15 @@ namespace ASPProject.Controllers
             {
                 db.Payment.Add(payment);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+
+                
+                var userId = User.Identity.GetUserId();
+                var serviceId = db.Service.Where(x => x.UserId == userId).SingleOrDefault().ServiceId;
+                
+
+
+                return RedirectToAction("Details","Services", new { id = serviceId });
             }
 
             return View(payment);

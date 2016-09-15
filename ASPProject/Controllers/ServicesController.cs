@@ -48,13 +48,13 @@ namespace ASPProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ServiceId,LastPickup,NextPickup,PickupDay,Balance,BillingFrequency,UserId")] Service service)
+        public ActionResult Create([Bind(Include = "ServiceId,NextPickup,Balance,UserId")] Service service)
         {
             if (ModelState.IsValid)
             {
                 db.Service.Add(service);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create", "Payments");
             }
 
             ViewBag.UserId = new SelectList(db.Users, "Id", "FirstName", service.UserId);

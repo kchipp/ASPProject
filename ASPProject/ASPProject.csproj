@@ -276,6 +276,18 @@
     <Compile Include="Migrations\201609151541390_add guest view.Designer.cs">
       <DependentUpon>201609151541390_add guest view.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609151616430_connect to payment page.cs" />
+    <Compile Include="Migrations\201609151616430_connect to payment page.Designer.cs">
+      <DependentUpon>201609151616430_connect to payment page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609151640584_add link to create payment.cs" />
+    <Compile Include="Migrations\201609151640584_add link to create payment.Designer.cs">
+      <DependentUpon>201609151640584_add link to create payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609152118158_removed pickup day from service model.cs" />
+    <Compile Include="Migrations\201609152118158_removed pickup day from service model.Designer.cs">
+      <DependentUpon>201609152118158_removed pickup day from service model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -306,8 +318,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery-3.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.0.js" />
+    <Content Include="Scripts\jquery-3.1.0.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.0.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -388,6 +405,7 @@
     <Content Include="Views\UserRouteJunctions\Index.cshtml" />
     <Content Include="Views\Home\Plans.cshtml" />
     <Content Include="Views\Home\GuestPlan.cshtml" />
+    <Content Include="Views\Shared\Date.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -398,7 +416,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201609131850441_updated field to registration.resx">
@@ -448,6 +465,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609151541390_add guest view.resx">
       <DependentUpon>201609151541390_add guest view.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609151616430_connect to payment page.resx">
+      <DependentUpon>201609151616430_connect to payment page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609151640584_add link to create payment.resx">
+      <DependentUpon>201609151640584_add link to create payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609152118158_removed pickup day from service model.resx">
+      <DependentUpon>201609152118158_removed pickup day from service model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

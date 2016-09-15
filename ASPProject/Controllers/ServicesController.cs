@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ASPProject.Models;
+using Microsoft.AspNet.Identity;
 
 namespace ASPProject.Controllers
 {
@@ -50,6 +51,11 @@ namespace ASPProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ServiceId,NextPickup,Balance,UserId")] Service service)
         {
+
+            var userId = User.Identity.GetUserId();
+            service.UserId = userId;
+            
+
             if (ModelState.IsValid)
             {
                 db.Service.Add(service);
@@ -57,7 +63,7 @@ namespace ASPProject.Controllers
                 return RedirectToAction("Create", "Payments");
             }
 
-            ViewBag.UserId = new SelectList(db.Users, "Id", "FirstName", service.UserId);
+            //ViewBag.UserId = new SelectList(db.Users, "Id", "FirstName", service.UserId);
             return View(service);
         }
 

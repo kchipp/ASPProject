@@ -288,6 +288,10 @@
     <Compile Include="Migrations\201609152118158_removed pickup day from service model.Designer.cs">
       <DependentUpon>201609152118158_removed pickup day from service model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609152254479_fixed foreign key on services model.cs" />
+    <Compile Include="Migrations\201609152254479_fixed foreign key on services model.Designer.cs">
+      <DependentUpon>201609152254479_fixed foreign key on services model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -475,6 +479,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609152118158_removed pickup day from service model.resx">
       <DependentUpon>201609152118158_removed pickup day from service model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609152254479_fixed foreign key on services model.resx">
+      <DependentUpon>201609152254479_fixed foreign key on services model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

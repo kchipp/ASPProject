@@ -4,42 +4,88 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index This is where the employee sees their route.</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #map {
+            width: 100%;
+            height: 400px;
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+    <h2>Index This is where the employee sees their route.</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Addresses.Address1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AspNetUsers.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Services.PickupDay)
-        </th>
-        <th></th>
-    </tr>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Addresses.Address1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AspNetUsers.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Services.PickupDay)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RouteId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RouteId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RouteId })
-        </td>
-    </tr>
-}
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Addresses.Address1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AspNetUsers.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Services.PickupDay)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Addresses.Address1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AspNetUsers.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Services.PickupDay)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.RouteId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.RouteId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.RouteId })
+                </td>
+            </tr>
+
+        }
+
+
+        <h3>Routes Map</h3>
+        <div id="map"></div>
+        <script>
+            function initMap() {
+                var mapDiv = document.getElementById('map');
+                var map = new google.maps.Map(mapDiv, {
+                    center: { lat: 43.0167, lng: -88.0070 },
+                    zoom: 10
+                });
+            }
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAV6uHA4fKRN_FEQwGv6DJFBZwuJGXYEPo&callback=initMap">
+        </script>
+</body>
+</html>
+
+
+
+
 
 </table>
+
+
+
+
+
+
+
+
+

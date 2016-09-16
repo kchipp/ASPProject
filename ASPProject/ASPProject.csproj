@@ -300,6 +300,14 @@
     <Compile Include="Migrations\201609161535532_changes customer login view.Designer.cs">
       <DependentUpon>201609161535532_changes customer login view.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609161715357_update customer login.cs" />
+    <Compile Include="Migrations\201609161715357_update customer login.Designer.cs">
+      <DependentUpon>201609161715357_update customer login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609162052021_edited getdetails function.cs" />
+    <Compile Include="Migrations\201609162052021_edited getdetails function.Designer.cs">
+      <DependentUpon>201609162052021_edited getdetails function.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -496,6 +504,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609161535532_changes customer login view.resx">
       <DependentUpon>201609161535532_changes customer login view.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609161715357_update customer login.resx">
+      <DependentUpon>201609161715357_update customer login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609162052021_edited getdetails function.resx">
+      <DependentUpon>201609162052021_edited getdetails function.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

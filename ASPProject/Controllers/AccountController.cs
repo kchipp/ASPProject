@@ -67,8 +67,15 @@ namespace ASPProject.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl, ApplicationUser user)
+        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+
         {
+            ApplicationDbContext db = new ApplicationDbContext();
+            var user = await UserManager.FindByEmailAsync(model.Email);
+
+            var id = db.Service.Where(r => r.UserId == user.Id).FirstOrDefault().ServiceId;
+                       
+
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -80,14 +87,16 @@ namespace ASPProject.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    var x = model.Email;
+                                  
                     
+
+                                   
                     if (user.Customer == false)
                     {
                         return RedirectToAction("Index", "Routes");
                     }
                   
-                    return RedirectToAction("Details", "Services");
+                    return RedirectToAction("Details", "Services", new { id });
 
 
                 case SignInStatus.LockedOut:

@@ -22,6 +22,14 @@ namespace ASPProject.Controllers
             return View(service.ToList());
         }
 
+        public ActionResult GetDetails()
+        {
+            var userId = User.Identity.GetUserId();
+            var id = db.Service.Where(r => r.UserId == userId).FirstOrDefault().ServiceId;
+
+            return RedirectToAction("Details", new { id = id });
+        }
+
         // GET: Services/Details/5
         public ActionResult Details(int? id)
         {
@@ -34,6 +42,7 @@ namespace ASPProject.Controllers
             {
                 return HttpNotFound();
             }
+            
             return View(service);
         }
 
@@ -79,6 +88,20 @@ namespace ASPProject.Controllers
             {
                 return HttpNotFound();
             }
+
+            for (DateTime today = DateTime.Now; today < service.NextPickup;)
+            {
+               service.NextPickup = service.NextPickup.AddDays(7);
+            }
+            
+            
+            //if DateTime().Now > service.NextPickup
+            //{
+
+
+            //}
+
+            service.NextPickup = 
             ViewBag.UserId = new SelectList(db.Users, "Id", "FirstName", service.UserId);
             return View(service);
         }

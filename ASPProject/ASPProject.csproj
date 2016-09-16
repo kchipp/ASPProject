@@ -292,6 +292,10 @@
     <Compile Include="Migrations\201609152254479_fixed foreign key on services model.Designer.cs">
       <DependentUpon>201609152254479_fixed foreign key on services model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609161246567_cosmetic edits.cs" />
+    <Compile Include="Migrations\201609161246567_cosmetic edits.Designer.cs">
+      <DependentUpon>201609161246567_cosmetic edits.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -482,6 +486,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609152254479_fixed foreign key on services model.resx">
       <DependentUpon>201609152254479_fixed foreign key on services model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609161246567_cosmetic edits.resx">
+      <DependentUpon>201609161246567_cosmetic edits.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

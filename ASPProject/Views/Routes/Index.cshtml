@@ -19,18 +19,18 @@
 <body>
     <h2>Employees see your route here.</h2>
 
-    <p>
+    @*<p>
         @Html.ActionLink("Create New", "Create")
-    </p>
+    </p>*@
 
     <table class="table">
         <tr>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.AspNetUsers.FirstName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Addresses.Address1)
-            </th>
+            </th>*@
             
             @*<th>
                 @Html.DisplayNameFor(model => model.Services.PickupDay)
@@ -41,12 +41,12 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.AspNetUsers.FirstName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Addresses.Address1)
-                </td>
+                </td>*@
                
                 @*<td>
                     @Html.DisplayFor(modelItem => item.Services.PickupDay)

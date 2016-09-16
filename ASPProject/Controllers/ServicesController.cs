@@ -72,7 +72,7 @@ namespace ASPProject.Controllers
                 return RedirectToAction("Create", "Payments");
             }
 
-            //ViewBag.UserId = new SelectList(db.Users, "Id", "FirstName", service.UserId);
+            
             return View(service);
         }
 
@@ -88,22 +88,10 @@ namespace ASPProject.Controllers
             {
                 return HttpNotFound();
             }
-
-            for (DateTime today = DateTime.Now; today < service.NextPickup;)
-            {
-               service.NextPickup = service.NextPickup.AddDays(7);
-            }
-            
-            
-            //if DateTime().Now > service.NextPickup
-            //{
-
-
-            //}
-
-            service.NextPickup = 
-            ViewBag.UserId = new SelectList(db.Users, "Id", "FirstName", service.UserId);
+                        
             return View(service);
+            //ViewBag.UserId = new SelectList(db.Users, "Id", "FirstName", service.UserId);
+            //return View(service);
         }
 
         // POST: Services/Edit/5
@@ -111,8 +99,16 @@ namespace ASPProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ServiceId,LastPickup,NextPickup,PickupDay,Balance,BillingFrequency,UserId")] Service service)
+        public ActionResult Edit([Bind(Include = "ServiceId,NextPickup,Balance,UserId")] Service service)
         {
+            DateTime today = DateTime.Now;
+
+            while (today > service.NextPickup)
+            {
+                service.NextPickup = service.NextPickup.AddDays(7);
+            }
+
+            
             if (ModelState.IsValid)
             {
                 db.Entry(service).State = EntityState.Modified;
@@ -120,7 +116,8 @@ namespace ASPProject.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.UserId = new SelectList(db.Users, "Id", "FirstName", service.UserId);
-            return View(service);
+            return RedirectToAction("GetDetails");
+            // View(service);
         }
 
         // GET: Services/Delete/5

@@ -26,14 +26,15 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Addresses.Address1)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.AspNetUsers.FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Services.PickupDay)
+                @Html.DisplayNameFor(model => model.Addresses.Address1)
             </th>
+            
+            @*<th>
+                @Html.DisplayNameFor(model => model.Services.PickupDay)
+            </th>*@
             <th></th>
         </tr>
 
@@ -41,14 +42,15 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Addresses.Address1)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.AspNetUsers.FirstName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Services.PickupDay)
+                    @Html.DisplayFor(modelItem => item.Addresses.Address1)
                 </td>
+               
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Services.PickupDay)
+                </td>*@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.RouteId }) |
                     @Html.ActionLink("Details", "Details", new { id = item.RouteId }) |

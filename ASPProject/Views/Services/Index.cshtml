@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Current Customers</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,19 +12,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.AspNetUsers.FirstName)
+            <p>Customer Name</p>
+            @*@Html.DisplayNameFor(model => model.AspNetUsers.FirstName)*@
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.LastPickup)
-        </th>
+        </th>*@
         <th>
-            @Html.DisplayNameFor(model => model.NextPickup)
+            <p>Pick Up Date</p>
+            @*@Html.DisplayNameFor(model => model.NextPickup)*@
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.PickupDay)
-        </th>
+        </th>*@
         <th>
-            @Html.DisplayNameFor(model => model.Balance)
+            <p>Current Balance</p>
+            @*@Html.DisplayNameFor(model => model.Balance)*@
         </th>
         @*<th>
             @Html.DisplayNameFor(model => model.BillingFrequency)
@@ -37,15 +40,15 @@
         <td>
             @Html.DisplayFor(modelItem => item.AspNetUsers.FirstName)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.LastPickup)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.NextPickup)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.PickupDay)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Balance)
         </td>

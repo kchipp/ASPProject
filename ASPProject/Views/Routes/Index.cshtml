@@ -12,7 +12,6 @@
             width: 100%;
             height: 400px;
             background-color: grey;
-
         }
     </style>
 </head>
@@ -20,21 +19,21 @@
     <h2>Employees see your route here.</h2>
 
     @*<p>
-        @Html.ActionLink("Create New", "Create")
-    </p>*@
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
 
     <table class="table">
         <tr>
             @*<th>
-                @Html.DisplayNameFor(model => model.AspNetUsers.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Addresses.Address1)
-            </th>*@
-            
+                    @Html.DisplayNameFor(model => model.AspNetUsers.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Addresses.Address1)
+                </th>*@
+
             @*<th>
-                @Html.DisplayNameFor(model => model.Services.PickupDay)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.Services.PickupDay)
+                </th>*@
             <th></th>
         </tr>
 
@@ -42,15 +41,15 @@
         {
             <tr>
                 @*<td>
-                    @Html.DisplayFor(modelItem => item.AspNetUsers.FirstName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Addresses.Address1)
-                </td>*@
-               
+                        @Html.DisplayFor(modelItem => item.AspNetUsers.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Addresses.Address1)
+                    </td>*@
+
                 @*<td>
-                    @Html.DisplayFor(modelItem => item.Services.PickupDay)
-                </td>*@
+                        @Html.DisplayFor(modelItem => item.Services.PickupDay)
+                    </td>*@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.RouteId }) |
                     @Html.ActionLink("Details", "Details", new { id = item.RouteId }) |
@@ -59,36 +58,50 @@
             </tr>
 
         }
-        
-</table>
 
-        <h3>Routes Map</h3>
-        <div id="map"></div>
-        <script>
-            function initMap() {
-                var mapDiv = document.getElementById('map');
-                var map = new google.maps.Map(mapDiv,
-                    {
-                        center: { lat: 43.0167, lng: -88.0070 },
-                        zoom: 12
-                    });
-                var marker = new google.maps.Marker
-                (
-                {
-                 position: new google.maps.LatLng(43.0167, -88.0070),
-                 map: map,
-                 title: 'Click me'
-                }
-            );
-         };
-            
-        </script>
-        <script async defer
-                src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAV6uHA4fKRN_FEQwGv6DJFBZwuJGXYEPo&callback=initMap">
-        </script>
-
+    </table>
 </body>
+<h3>Routes Map</h3>
+<div id="map"></div>
+<script>
+    function initMap() {
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv,
+            {
+                center: { lat: 43.0167, lng: -88.0070 },
+                zoom: 12
+            });
+        var marker = new google.maps.Marker
+        (
+        {
+            position: new google.maps.LatLng(43.0167, -88.0070),
+            map: map,
+            title: 'Click me'
+        }
+    );
+    };
+
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAV6uHA4fKRN_FEQwGv6DJFBZwuJGXYEPo&callback=initMap">
+</script>
+
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

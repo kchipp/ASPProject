@@ -86,7 +86,8 @@ namespace ASPProject.Controllers
                     {
                         return RedirectToAction("Index", "Routes");
                     }
-                    return RedirectToAction("Plans", "Home");
+                  
+                    return RedirectToAction("Details", "Services");
 
 
                 case SignInStatus.LockedOut:

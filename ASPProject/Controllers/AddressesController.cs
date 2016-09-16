@@ -86,43 +86,43 @@ namespace ASPProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AddressId,Type,Address1,Address2,City,State,ZipCode,UserId")] Address address)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(address).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.UserId = new SelectList(db.Users, "Id", "FirstName", address.UserId);
-            return View(address);
-        }
+        //public ActionResult Edit([Bind(Include = "AddressId,Type,Address1,Address2,City,State,ZipCode,UserId")] Address address)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(address).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    ViewBag.UserId = new SelectList(db.Users, "Id", "FirstName", address.UserId);
+        //    return View(address);
+        //}
 
-        // GET: Addresses/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Address address = db.Address.Find(id);
-            if (address == null)
-            {
-                return HttpNotFound();
-            }
-            return View(address);
-        }
+        //// GET: Addresses/Delete/5
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Address address = db.Address.Find(id);
+        //    if (address == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(address);
+        //}
 
-        // POST: Addresses/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Address address = db.Address.Find(id);
-            db.Address.Remove(address);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //// POST: Addresses/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    Address address = db.Address.Find(id);
+        //    db.Address.Remove(address);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
         protected override void Dispose(bool disposing)
         {

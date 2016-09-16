@@ -16,11 +16,11 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.PaymentMethod, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model, htmlAttributes: new { @class = "control-label col-md-6" })
             <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.PaymentMethod)
-                    @Html.ValidationMessageFor(model => model.PaymentMethod, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.PaymentMethod, "Check this box to use Paypal", new { @class = "text-danger" })
                 </div>
             </div>
         </div>

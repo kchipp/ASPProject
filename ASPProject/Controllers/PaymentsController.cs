@@ -56,12 +56,12 @@ namespace ASPProject.Controllers
 
 
                 
-                var userId = User.Identity.GetUserId();
-                var serviceId = db.Service.Where(x => x.UserId == userId).SingleOrDefault().ServiceId;
+                //var userId = User.Identity.GetUserId();
+                //var serviceId = db.Service.Where(x => x.UserId == userId).FirstOrDefault().ServiceId;
                 
 
 
-                return RedirectToAction("Details","Services", new { id = serviceId });
+                return RedirectToAction("GetDetails","Services");
             }
 
             return View(payment);

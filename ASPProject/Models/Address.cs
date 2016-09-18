@@ -27,6 +27,10 @@ namespace ASPProject.Models
 
         [Required]
         public int ZipCode { get; set; }
+        public double Latitude { get; set; }
+        public double  Longitude { get; set; }
+
+
 
         [ForeignKey ("AspNetUsers")]
         public string UserId { get; set; }

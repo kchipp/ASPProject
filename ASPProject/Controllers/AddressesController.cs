@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using ASPProject.Models;
 using Microsoft.AspNet.Identity;
+using GoogleMaps.LocationServices;
 
 namespace ASPProject.Controllers
 {
@@ -49,12 +50,20 @@ namespace ASPProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AddressId,Type,Address1,Address2,City,State,ZipCode,UserId")] Address address)
+        public ActionResult Create([Bind(Include = "AddressId,Type,Address1,Address2,City,State,ZipCode, Latitude, Longitude, UserId")] Address address)
         {
             address.AspNetUsers = db.Users.Find(User.Identity.GetUserId());
             address.UserId = User.Identity.GetUserId();
             if (ModelState.IsValid)
             {
+                var location = address.Address1 + address.City;
+                var locationService = new GoogleLocationService();
+                var point = locationService.GetLatLongFromAddress(location);
+                var latitude = point.Latitude;
+                var longitude = point.Longitude;
+                address.Latitude = latitude;
+                address.Longitude = longitude;
+            
                 db.Address.Add(address);
                 db.SaveChanges();
                 //return RedirectToAction("Index");

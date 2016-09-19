@@ -72,9 +72,9 @@ namespace ASPProject.Controllers
         {
             ApplicationDbContext db = new ApplicationDbContext();
             var user = await UserManager.FindByEmailAsync(model.Email);
-
-            var id = db.Service.Where(r => r.UserId == user.Id).FirstOrDefault().ServiceId;
-                       
+          
+            
+                                
 
             if (!ModelState.IsValid)
             {
@@ -95,7 +95,11 @@ namespace ASPProject.Controllers
                     {
                         return RedirectToAction("Index", "Addresses");
                     }
-                  
+               
+                    
+                        var id = db.Service.Where(r => r.UserId == user.Id).FirstOrDefault().ServiceId;
+
+                    
                     return RedirectToAction("Details", "Services", new { id });
 
 

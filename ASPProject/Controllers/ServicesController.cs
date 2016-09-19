@@ -25,6 +25,7 @@ namespace ASPProject.Controllers
         public ActionResult GetDetails()
         {
             var userId = User.Identity.GetUserId();
+            
             var id = db.Service.Where(r => r.UserId == userId).FirstOrDefault().ServiceId;
 
             return RedirectToAction("Details", new { id = id });
@@ -79,6 +80,7 @@ namespace ASPProject.Controllers
         // GET: Services/Edit/5
         public ActionResult Edit(int? id)
         {
+           
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -90,8 +92,7 @@ namespace ASPProject.Controllers
             }
                         
             return View(service);
-            //ViewBag.UserId = new SelectList(db.Users, "Id", "FirstName", service.UserId);
-            //return View(service);
+           
         }
 
         // POST: Services/Edit/5
@@ -99,10 +100,10 @@ namespace ASPProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ServiceId,NextPickup,Balance,UserId")] Service service)
+        public ActionResult Edit(Service service)
         {
             DateTime today = DateTime.Now;
-
+            ApplicationDbContext db = new ApplicationDbContext();
             while (today > service.NextPickup)
             {
                 service.NextPickup = service.NextPickup.AddDays(7);
@@ -113,7 +114,7 @@ namespace ASPProject.Controllers
             {
                 db.Entry(service).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("GetDetails");
+                return RedirectToAction("GetDetails", service.ServiceId);
             }
             ViewBag.UserId = new SelectList(db.Users, "Id", "FirstName", service.UserId);
             return RedirectToAction("GetDetails");

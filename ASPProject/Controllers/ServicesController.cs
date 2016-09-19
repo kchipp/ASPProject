@@ -113,7 +113,7 @@ namespace ASPProject.Controllers
             {
                 db.Entry(service).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("GetDetails");
             }
             ViewBag.UserId = new SelectList(db.Users, "Id", "FirstName", service.UserId);
             return RedirectToAction("GetDetails");

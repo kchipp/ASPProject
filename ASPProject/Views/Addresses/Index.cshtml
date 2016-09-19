@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>We need you address if you want us to get your trash</h2>
+<h2>We need your address if you want us to get your trash</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -97,37 +97,19 @@
                 position: latlng,
                 map: map
             })
-               </text>
+            </text>
             }
-     }
+           
+        }
+     
+        
 
-        //    // Create a <script> tag and set the USGS URL as the source.
-        //    var latlng = google.maps.LatLng()
-        //    var script = document.createElement('script');
-        //    // (In this example we use a locally stored copy instead.)
-        //    script.src = 'http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp';
-        //    //script.src = '(localdb)MSSQLLocalDB/aspnet-ASPProject-20160913073032/dbo.Addresses';
-        //    document.getElementsByTagName('head')[0].appendChild(script);
-        //}
-
-        //// Loop through the results array and place a marker for each
-        //// set of coordinates.
-        //window.eqfeed_callback = function (results)
-        //{
-        //    for (var i = 0; i < results.features.length; i++) {
-        //        var coords = results.features[i].geometry.coordinates;
-        //        var latLng = new google.maps.LatLng(coords[1], coords[0]);
-        //        var marker = new google.maps.Marker({
-        //            position: latLng,
-        //            map: map
-        //        });
-        //    }
-        //}
     </script>
    
 </head>
 <body>
     <div id="map"></div>
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAV6uHA4fKRN_FEQwGv6DJFBZwuJGXYEPo&callback=initialize">
     </script>

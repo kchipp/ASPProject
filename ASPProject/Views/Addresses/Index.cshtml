@@ -83,8 +83,8 @@
 
         function initialize() {
             map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10,
-                center: new google.maps.LatLng(43.0167, -88, 0070),
+                zoom: 13,
+                center: new google.maps.LatLng(43.0167, -88.0070),
 
             });
 
@@ -99,21 +99,32 @@
             })
             </text>
             }
-            
-            // Create the search box and link it to the UI element.
-            var input = document.getElementById('pac-input');
-            var searchBox = new google.maps.places.SearchBox(input);
-            map.controls[google.maps.ControlPosition.LEFT_TOP].push(input);
 
-            // Bias the SearchBox results towards current map's viewport.
-            map.addListener('bounds_changed', function() {
-                searchBox.setBounds(map.getBounds());
-            });
+            //// Create the search box and link it to the UI element.
+            //var input = document.getElementById('pac-input');
+            //var searchBox = new google.maps.places.SearchBox(input);
+            //map.controls[google.maps.ControlPosition.LEFT_TOP].push(input);
+
+            //// Bias the SearchBox results towards current map's viewport.
+            //map.addListener('bounds_changed', function () {
+            //    searchBox.setBounds(map.getBounds());
+            //});
+            //var largeInfowindow = new google.maps.InfoWindow();
+            //// Initialize the drawing manager.
+            //var drawingManager = new google.maps.drawing.DrawingManager({
+            //    drawingMode: google.maps.drawing.OverlayType.POLYGON,
+            //    drawingControl: true,
+            //    drawingControlOptions: {
+            //        position: google.maps.ControlPosition.TOP_LEFT,
+            //        drawingModes: [
+            //          google.maps.drawing.OverlayType.POLYGON
+            //        ]
+            //    }
+            //});
 
         }
-
     </script>
-   
+
 </head>
 <body>
     <div id="map"></div>
